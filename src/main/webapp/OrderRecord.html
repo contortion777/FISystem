@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Menu</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional" rel="stylesheet">
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- ajax -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="js/OrderRecord.js" type="text/javascript"></script>
+  <style>
+  .affix {
+      top: 0;
+      width: 100%;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+  }
+  .affix-top {
+      position: static;
+      top: -35px;
+  }
+  .affix + .container-fluid {
+      padding-top: 70px;
+  }
+  nav{
+	  background-color:	#C2D3DA;
+  }
+  body{
+	  background-color:	#F1F3F2;
+	  font-family:"微軟正黑體";
+	  margin-top:100px;
+	  padding-bottom: 70px;
+  }
+ .qty .count {
+    color: #585A56;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 15px;
+    padding: 0 2px
+    ;min-width: 35px;
+    text-align: center;
+}
+.qty .plus {
+	background-color:#585A56;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 10px;
+    height: 10px;
+    font: 20px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    }
+.qty .minus {
+	background-color:#585A56;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    color: white;
+    width: 10px;
+    height: 10px;
+    font: 20px/1 Arial,sans-serif;
+    text-align: center;
+    border-radius: 50%;
+    background-clip: padding-box;
+}
+.minus:hover{
+    background-color: #717fe0 !important;
+}
+.plus:hover{
+    background-color: #717fe0 !important;
+}
+/*Prevent text selection*/
+span{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+input{  
+    border: 0;
+    width: 2%;
+	font-size:20px;
+}
+nput::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input:disabled{
+    background-color:white;
+}
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-fixed-top" >
+  <ul class="navbar-nav mr-auto">
+	<img src="picture/title.jpg" style="width:68px;float:left;"></img><p style="width:500px;font-size:48px;color:white;font-family:Comic Sans MS">&nbsp;Full Immediately</p>
+  </ul>
+<form style="text-align:right">
+			<a href="GuestMenu.html" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
+			<a href="OrderRecord.html" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart"></span><strong> 點餐紀錄 </strong></a>
+			<a href="FI_Login.html" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
+</form>
+</nav>
+<div class="container-fluid" > 
+	<div class="col-md-4" id="Record">
+    </div>
+</div>
+<nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
+    <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
+</nav>
+</body>
+</html>

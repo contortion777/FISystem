@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Menu</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        .affix {
+            top: 0;
+            width: 100%;
+            -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+        }
+        
+        .affix-top {
+            position: static;
+            top: -35px;
+        }
+        
+        .affix+.container-fluid {
+            padding-top: 70px;
+        }
+        
+        nav {
+            background-color: #C2D3DA;
+        }
+        
+        body {
+            background-color: #F1F3F2;
+            font-family: "微軟正黑體";
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-fixed-top">
+        <ul class="navbar-nav mr-auto">
+	        <img src="picture/title.jpg" style="width:68px;float:left;"></img><p style="width:500px;font-size:48px;color:white;font-family:Comic Sans MS">&nbsp;Full Immediately</p>
+                       
+        </ul>
+        <form style="text-align:right">
+            <a href="FI_SignUp.html" style="color:#666666"><span class="glyphicon glyphicon-saved"></span><strong> 去註冊</strong></a>
+            <a href="#" style="color:#666666"><span class="glyphicon glyphicon-globe"></span><strong> 忘記密碼</strong></a>
+        </form>
+    </nav>
+    <div class="container">
+        <div>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-4">
+                    <form>
+                        <div style="font-size:100px;text-align:center;" class="form-group">
+                            <img src="picture/title.jpg" style="width:100px;"></img>
+                        </div>
+                        <div style="width:330px;text-align:center;" class="form-group">
+                            <label>帳號</label>
+                            <input class="form-control" placeholder="輸入帳號">
+                        </div>
+                        <div style="width:330px;text-align:center;" class="form-group">
+                            <label>密碼</label>
+                            <input class="form-control" placeholder="輸入密碼">
+                        </div>
+                        <div style="text-align:center" class="form-group">
+                            <button style="background-color:#81A3A7; color:white;" class="btn btn-outline-light" type="button" onclick="window.location.href='GuestMenu.html'">登入</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
+        <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
+    </nav>
+</body>
+
+</html>
