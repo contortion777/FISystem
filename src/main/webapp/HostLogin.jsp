@@ -133,7 +133,7 @@
 
                                             </div>
 
-                                            <h4 id="errMsg" class="text-danger" align="center">${error_message}</h4>
+                                            <h4 id="errMsg" class="text-danger" align="center">請登入</h4>
                                         </div>
                                         <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
                                             <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
