@@ -2,6 +2,8 @@ package order.service;
 
 import order.java.MyOrder;
 import java.io.IOException;
+import java.text.ParseException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,14 +24,22 @@ public class ShowHistoryOrderServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 
-   	 String Mydate = request.getParameter("date");
-       ////////////////////////////////////////// 上面這裡要填老闆端給的參數 決定要拿的菜單狀態 或是 拿到客人ID
+   	 String year = request.getParameter("year");
+   	String month = request.getParameter("month");
+   	String day = request.getParameter("day");
+   	
+   	 ////////////////////////////////////////// 上面這裡要填老闆端給的參數 決定要拿的菜單狀態 或是 拿到客人ID
        //String MyStatus ="已完成";
       
        MyOrder connection = new MyOrder();
        
        //JSONArray jsonArray = connection.getJson();
-       connection.getOrder(Mydate);
+       try {
+		connection.getDateOrder(year,month,day);
+	} catch (ParseException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace(); 
+	}
     
 
        response.setHeader("Access-Control-Allow-Origin", "*");
