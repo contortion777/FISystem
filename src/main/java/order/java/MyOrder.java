@@ -52,13 +52,16 @@ public class MyOrder {
 		}
 	}
 
-	public void getOrder(String MyStatus) {
+	public void getOrder(String MyStatus, String custId) {
 
 		//BasicDBObject fields = new BasicDBObject().append( 1); // SELECT name
 		BasicDBObject query = new BasicDBObject();
 		System.out.println(MyStatus);
 		if(MyStatus.equals("已完成")|MyStatus.equals("待接受")|MyStatus.equals("待製作")) {
 			query.put("Status", new BasicDBObject("$regex", MyStatus));
+
+			if (custId != null)
+				query.put("CustomerID", new BasicDBObject("$regex", custId));
 		}
 		FindIterable<Document> findIterable = collection.find(query);
 		MongoCursor<Document> cursor1 = findIterable.iterator();
