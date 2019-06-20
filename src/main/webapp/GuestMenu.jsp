@@ -3,6 +3,14 @@
 <html>
 
 <head>
+    <% //把account 的值傳過來了
+        Object name=session.getAttribute("Member");
+        String username = "";
+        if(name!=null){
+            username = name.toString();
+        }
+    %>
+
     <title>Menu</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -113,6 +121,17 @@
 			}
 		}
     </style>
+    <script>
+        var var1 = "";
+        var1 = "<%=username%>";
+
+        if (var1 == "") {
+            console.log("!2345fdws");
+            $(document).ready(function() {
+                window.location.href = "https://fisystem.herokuapp.com/FI_Login.jsp";
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -122,9 +141,9 @@
             <p id="title">Full Immediately</p>
         </ul>
         <form style="text-align:right">
-            <a href="GuestMenu.html" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
+            <a href="GuestMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
             <a href="OrderRecord.html" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart"></span><strong> 點餐紀錄 </strong></a>
-            <a href="FI_Login.html" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
+            <a href="FI_Login.jsp" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
         </form>
     </nav>
     <div class="container-fluid">

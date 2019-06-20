@@ -22,7 +22,7 @@
 
         FindIterable<Document> findIterable = collection.find();
         MongoCursor<Document> cursorlogin = findIterable.iterator();
-        Document login = cursorlogin.next();//找到日期一樣的那個doc
+        Document login = cursorlogin.next();
 
         String username = request.getParameter("username");
 
@@ -40,11 +40,12 @@
             HttpSession session1=request.getSession();
             session1.setAttribute("name",username);
         }else if (username==null&&password==null){
-
-            request.setAttribute("error_message", "請先登入");
+            HttpSession session1=request.getSession();
+            session1.setAttribute("error_message", "請先登入");
 
         }else{
-            request.setAttribute("error_message", "帳號或密碼錯誤，請重新輸入");
+            HttpSession session1=request.getSession();
+            session1.setAttribute("error_message", "帳號或密碼錯誤，請重新輸入");
 
         }
 
@@ -126,7 +127,7 @@
 
     </ul>
     <form style="text-align:right">
-        <a href="FI_Login.html" style="color:#666666"><span class="glyphicon glyphicon-globe"></span><strong> 我是客人</strong></a>
+        <a href="FI_Login.jsp" style="color:#666666"><span class="glyphicon glyphicon-globe"></span><strong> 我是客人</strong></a>
     </form>
 </nav>
 <div class="container">
@@ -154,7 +155,7 @@
 
     </div>
 
-    <h4 id="errMsg" class="text-danger" align="center">請登入</h4>
+    <h4 id="errMsg" class="text-danger" align="center"><%= session.getAttribute("error_message") %></h4>
 </div>
 <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
     <p style="position:absolute;right:20px;width:120px;">Made By FI</p>

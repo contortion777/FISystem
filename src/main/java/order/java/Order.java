@@ -60,6 +60,7 @@ public class Order {
         BasicDBObject query = new BasicDBObject();
         query.put("date", BasicDBObjectBuilder.start("$gt", today).add("$lt", tomorrow).get());//日期在today-tomorrow之間
         int cursor1 = collection1.find(query).count();  //日期符合的doc 有幾筆 正常來說只有 1筆 或 沒有
+
         System.out.println("count: " + cursor1);
         System.out.println("query: " + query.toJson());
 

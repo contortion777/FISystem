@@ -47,7 +47,7 @@
                 data: jsonData,
                 success: function() {
                     alert("註冊成功");
-                    window.location.href = "FI_Login.html";
+                    window.location.href = "FI_Login.jsp";
                 },
                 error: function() {
                     alert("失敗");

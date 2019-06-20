@@ -1,8 +1,80 @@
+<%@ page import="com.mongodb.MongoClient" %>
+<%@ page import="com.mongodb.DB" %>
+<%@ page import="com.mongodb.*" %>
+<%@ page import="com.mongodb.client.MongoCollection" %>
+<%@ page import="com.mongodb.client.MongoDatabase" %>
+<%@ page import="org.bson.Document" %>
+<%@ page import="com.mongodb.client.FindIterable" %>
+<%@ page import="com.mongodb.client.MongoCursor" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <html>
 
 <head>
+    <% //把account 的值傳過來了
+        MongoClient mongoClient = new MongoClient(new MongoClientURI("mongodb://tonyhu:fisystem777@ds135456.mlab.com:35456/heroku_qww5lpsp"));
+        MongoDatabase mongoDatabase = mongoClient.getDatabase("heroku_qww5lpsp");
+         DB db = mongoClient.getDB("heroku_qww5lpsp");
+        MongoCollection<Document> collection  = mongoDatabase.getCollection("Member");
+        DBCollection collection1 = db.getCollection("Member");
+        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html");
+
+        String username = request.getParameter("username");
+
+        String password = request.getParameter("password");
+
+        HttpSession session1=request.getSession();
+        if(username==null&&password==null){
+
+            session1.setAttribute("error_message", "請先登入");
+
+
+        }else if(username.equals("")||password.equals("")){
+
+            session1.setAttribute("error_message", "帳密不可空白");
+        }
+        else{
+
+
+
+            BasicDBObject query = new BasicDBObject();
+            query.put("account", username);
+
+            int member = collection1.find(query).count();
+            if(member==0){
+
+
+                session1.setAttribute("error_message", "尚未註冊");
+            }else {
+                FindIterable<Document> findIterable = collection.find(query);
+                MongoCursor<Document> cursorlogin = findIterable.iterator();
+
+                Document login = cursorlogin.next();
+                String dbusername = (String) login.get("account");//get("Account")的value
+
+                String dbpassword = (String) login.get("password");//get("Password")的value
+                if (dbusername.equals(username) && dbpassword.equals(password)) {
+                    request.getRequestDispatcher("/GuestTemp.jsp").forward(request, response);
+
+                    session1.setAttribute("Member", username);
+
+                } else {
+
+                    session1.setAttribute("error_message", "密碼錯誤，請重新輸入");
+
+                }
+
+            }
+        }
+
+
+
+
+
+
+    %>
+
     <title>馬尚飽—登入</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -76,7 +148,7 @@
 
         </ul>
         <form style="text-align:right">
-            <a href="FI_SignUp.html" style="color:#666666"><span class="glyphicon glyphicon-saved"></span><strong> 去註冊</strong></a>
+            <a href="FI_SignUp.jsp" style="color:#666666"><span class="glyphicon glyphicon-saved"></span><strong> 去註冊</strong></a>
             <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-globe"></span><strong> 我是老闆</strong></a>
         </form>
     </nav>
@@ -84,25 +156,26 @@
         <div>
             <div class="row">
                 <div class="col-md-offset-4 col-md-4">
-                    <form>
+                    <form id="user_login_form" name="loginForm" method="post" action="FI_Login.jsp">
                         <div style="font-size:100px;text-align:center;" class="form-group">
                             <img src="picture/title.jpg" style="width:100px;"></img>
                         </div>
                         <div style="width:330px;text-align:center;" class="form-group">
                             <label>帳號</label>
-                            <input class="form-control" placeholder="輸入帳號">
+                            <input class="form-control" placeholder="輸入帳號" name="username">
                         </div>
                         <div style="width:330px;text-align:center;" class="form-group">
                             <label>密碼</label>
-                            <input class="form-control" placeholder="輸入密碼">
+                            <input class="form-control" placeholder="輸入密碼" name="password">
                         </div>
                         <div style="text-align:center" class="form-group">
-                            <button style="background-color:#81A3A7; color:white;" class="btn btn-outline-light" type="button" onclick="window.location.href='GuestMenu.html'">登入</button>
+                            <button id="submit_btn" type="submit" class="btn btn-info" style="background-color: #81A3A7; color:white;">登入</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <h4 id="errMsg" class="text-danger" align="center"><%= session.getAttribute("error_message") %></h4>
     </div>
     <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
         <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
