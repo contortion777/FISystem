@@ -1,15 +1,13 @@
 $(document).ready(function() {
     let acn = $("#act").val();
-    let order = {
-        "Account" : acn,
-        "Status": "已完成",
-    };
-    let jsonData = JSON.stringify(order);
+    let order = { "Account" : acn, "Status": "已完成" };
+    //let jsonData = JSON.stringify(order);
 
     $.ajax({
-        url: "https://fisystem.herokuapp.com/ShowOrderServlet",
-        data: jsonData,
-        dataType: "text",
+        //url: "https://fisystem.herokuapp.com/ShowOrderServlet",
+        url: "http://localhost:8080/FullImmediately/ShowOrderServlet",
+        data: order,
+        dataType: "json",
         type: "POST",
         success: function(data) {
             var allOrder = [];
