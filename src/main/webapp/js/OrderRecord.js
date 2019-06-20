@@ -3,8 +3,8 @@ $(document).ready(function() {
     //let jsonData = JSON.stringify(order);
     console.log("var1" + var1);
     $.ajax({
-        //url: "https://fisystem.herokuapp.com/ShowOrderServlet",
-        url: "http://localhost:8080/FullImmediately/ShowOrderServlet",
+        url: "https://fisystem.herokuapp.com/ShowOrderServlet",
+        //url: "http://localhost:8080/FullImmediately/ShowOrderServlet",
         data: order,
         dataType: "json",
         type: "POST",
