@@ -76,18 +76,6 @@ $(document).ready(function() {
                         '<h4>總金額 : ' + tprice + '元</h4>' +
                         '<button id="button' + oid + '" type="submit" class="btn btn-success pull-right" onClick = "readyToMake(\'' + psid + '\', \'' + oid + '\')">開始製作</button><button class="btn btn-danger" data-toggle="modal"  onClick = "refuseToMake(\'' + psid + '\', \'' + oid + '\')" data-target="#confirm-delete' + oid + '">刪除訂單</button>'
                     );
-                    if (type === "外帶") {
-                        let target = "#button" + oid;
-                        $(target).attr('onClick', false);
-                        let dataTarget = "#confirm-predictTime" + oid;
-                        $(target).attr('data-toggle', 'modal');
-                        $(target).attr('data-target', dataTarget);
-
-                        $('#predictTime').append(
-                            '<div class="modal fade" id="confirm-predictTime' + oid + '" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5>設定預計取餐時間</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body"><div id="button-group' + oid + '"><button type="button" class="btn bg-secondary btn-sm">5分</button><button type="button" class="btn bg-secondary btn-sm">10分</button><button type="button" class="btn bg-secondary btn-sm">15分</button><button type="button" class="btn bg-secondary btn-sm">20分</button><button type="button" class="btn bg-secondary btn-sm">25分</button><button type="button" class="btn bg-secondary btn-sm">30分</button></div></div><div class="modal-footer" id="predictTimeTest"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button>' +
-                            '<button class="btn btn-success btn-ok"  onClick ="readyToMake(\'' + psid + '\', \'' + oid + '\')" data-dismiss="modal" disabled>開始製作</button></div></div></div></div>'
-                        );
-                    }
                     $('#delete').append(
                         '<div class="modal fade" id="confirm-delete' + oid + '" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><h3>確定要刪除此餐點嗎？</h3></div><div class="modal-footer" id="deleteTest"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button>' +
                         '<button class="btn btn-danger btn-ok"  onClick =refuseToMake("' + psid + '") data-dismiss="modal">刪除</button></div></div></div></div>'
@@ -184,16 +172,6 @@ $(document).ready(function() {
                         '<h4>總金額 : ' + tprice + '元' +
                         '<button id="button' + oid + '" type="submit" class="btn btn-success pull-right" onClick ="finishedList(\'' + psid + '\', \'' + oid + '\')">完成訂單</button></h4>'
                     );
-                    if (allOrder[j].Type === "外帶") {
-                        var target = "#button" + oid;
-                        var dataTarget = "#confirm-predictTime" + oid;
-                        $(target).attr('data-toggle', 'modal');
-                        $(target).attr('data-target', dataTarget);
-                        $('#predictTime').append(
-                            '<div class="modal fade" id="confirm-predictTime' + oid + '" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5>設定預計取餐時間</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body"><div id="button-group' + oid + '"><button type="button" class="btn bg-secondary btn-sm">5分</button><button type="button" class="btn bg-secondary btn-sm">10分</button><button type="button" class="btn bg-secondary btn-sm">15分</button><button type="button" class="btn bg-secondary btn-sm">20分</button><button type="button" class="btn bg-secondary btn-sm">25分</button><button type="button" class="btn bg-secondary btn-sm">30分</button></div></div><div class="modal-footer" id="predictTimeTest"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button>' +
-                            '<button class="btn btn-success btn-ok"  onClick ="finishedList(\'' + psid + '\', \'' + oid + '\')" data-dismiss="modal" disabled>完成訂單</button></div></div></div></div>'
-                        );
-                    }
                 }
             }
         });
@@ -250,18 +228,6 @@ function loadAccept() {
                     '<h4>總金額 : ' + tprice + '元</h4>' +
                     '<button id="button' + oid + '" type="submit" class="btn btn-success pull-right" onClick = "readyToMake(\'' + psid + '\', \'' + oid + '\')">開始製作</button><button class="btn btn-danger" data-toggle="modal"  onClick = "refuseToMake(\'' + psid + '\', \'' + oid + '\')" data-target="#confirm-delete' + oid + '">刪除訂單</button>'
                 );
-                if (type === "外帶") {
-                    let target = "#button" + oid;
-                    $(target).attr('onClick', false);
-                    let dataTarget = "#confirm-predictTime" + oid;
-                    $(target).attr('data-toggle', 'modal');
-                    $(target).attr('data-target', dataTarget);
-
-                    $('#predictTime').append(
-                        '<div class="modal fade" id="confirm-predictTime' + oid + '" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><h5>設定預計取餐時間</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div><div class="modal-body"><div id="button-group' + oid + '"><button type="button" class="btn bg-secondary btn-sm">5分</button><button type="button" class="btn bg-secondary btn-sm">10分</button><button type="button" class="btn bg-secondary btn-sm">15分</button><button type="button" class="btn bg-secondary btn-sm">20分</button><button type="button" class="btn bg-secondary btn-sm">25分</button><button type="button" class="btn bg-secondary btn-sm">30分</button></div></div><div class="modal-footer" id="predictTimeTest"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button>' +
-                        '<button class="btn btn-success btn-ok"  onClick ="readyToMake(\'' + psid + '\', \'' + oid + '\')" data-dismiss="modal" disabled>開始製作</button></div></div></div></div>'
-                    );
-                }
                 $('#delete').append(
                     '<div class="modal fade" id="confirm-delete' + oid + '" tabindex="-1"><div class="modal-dialog"><div class="modal-content"><div class="modal-body"><h3>確定要刪除此餐點嗎？</h3></div><div class="modal-footer" id="deleteTest"><button type="button" class="btn btn-default" data-dismiss="modal">取消</button>' +
                     '<button class="btn btn-danger btn-ok"  onClick =refuseToMake("' + psid + '") data-dismiss="modal">刪除</button></div></div></div></div>'
