@@ -115,7 +115,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#sendOrder').click(function(e) {
         if (menuAry.length !== 0) {
-            let id = $("#custID").val();
+            let id = $("#act").val();
             let type = $("#type").val();
             let date = getNowFormatDate();
             let price = totalPrice;
