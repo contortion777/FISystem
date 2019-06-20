@@ -189,13 +189,16 @@ $(document).ready(function() {
 	//刪除餐點種類
 	$('#DeleteMenu').click(function(e) {
 		let dclassname = $('#deleteMenuClass').val();
-		let str = { "ClassName" : dclassname };
-		let jsonData = JSON.stringify(str);
+		let fd = new FormData();
+		fd.append("ClassName", dclassname);
 		console.log(dclassname);
 		$.ajax({
 			url: "https://fisystem.herokuapp.com/RemoveMenuClass",
-			data: jsonData, //data只能指定單一物件
-			dataType: "text",
+			//url: "http://localhost:8080/FullImmediately/RemoveMenuClass",
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: fd, //data只能指定單一物件
 			type: "Post",
 			success: function() {
 				alert("刪除成功！");

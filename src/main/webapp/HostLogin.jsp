@@ -126,11 +126,11 @@
                     </div>
                     <div style="width:330px;text-align:center;" class="form-group">
                         <label>帳號</label>
-                        <input class="form-control" placeholder="輸入帳號" name="username" style="text-align:center">
+                        <input class="form-control" placeholder="輸入帳號" name="username">
                     </div>
                     <div style="width:330px;text-align:center;" class="form-group">
                         <label>密碼</label>
-                        <input type="password" class="form-control" placeholder="輸入密碼" name="password" style="text-align:center">
+                        <input type="password" class="form-control" placeholder="輸入密碼" name="password">
                     </div>
                     <div style="text-align:center" class="form-group">
                         <button id="submit_btn" type="submit" class="btn btn-info" style="background-color: #81A3A7; color:white;">登入</button>
