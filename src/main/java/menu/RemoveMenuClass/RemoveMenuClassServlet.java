@@ -27,8 +27,7 @@ public class RemoveMenuClassServlet extends HttpServlet {
 
         try {
             BasicDBObject document = new BasicDBObject();
-            document.append("ClassName", className);
-            
+            document.put("ClassName", className);
             collection.remove(document);
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
