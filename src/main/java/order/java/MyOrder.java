@@ -53,11 +53,10 @@ public class MyOrder {
 		//BasicDBObject fields = new BasicDBObject().append( 1); // SELECT name
 		BasicDBObject query = new BasicDBObject();
 		System.out.println(MyStatus);
-		if (custId != null)		//顧客端要查看 不需要區分訂單狀態
-			query.put("CustomerID", new BasicDBObject("$regex", custId));
-		else {
-			//if (MyStatus.equals("已完成") | MyStatus.equals("待接受") | MyStatus.equals("待製作"))
-				query.put("Status", new BasicDBObject("$regex", MyStatus));
+		if (MyStatus.equals("已完成") | MyStatus.equals("待接受") | MyStatus.equals("待製作")) {
+			query.put("Status", new BasicDBObject("$regex", MyStatus));
+			if (custId != null)		//顧客端查看歷史訂單
+				query.put("CustomerID", new BasicDBObject("$regex", custId));
 		}
 		FindIterable<Document> findIterable = collection.find(query);
 		MongoCursor<Document> cursor1 = findIterable.iterator();

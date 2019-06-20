@@ -406,6 +406,7 @@ function finishedList(cosid, oid) {
         data: jsonData2,
         success: function(data) {
 			//alert("完成");
+            window.location.reload();
             console.log("成功");
         },
         error: function() {
