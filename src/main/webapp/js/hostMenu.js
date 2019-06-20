@@ -189,7 +189,8 @@ $(document).ready(function() {
 	//刪除餐點種類
 	$('#DeleteMenu').click(function(e) {
 		let dclassname = $('#deleteMenuClass').val();
-		let jsonData = JSON.stringify(dclassname);
+		let str = { "ClassName" : dclassname };
+		let jsonData = JSON.stringify(str);
 		console.log(dclassname);
 		$.ajax({
 			url: "https://fisystem.herokuapp.com/RemoveMenuClass",
@@ -250,7 +251,7 @@ $(document).ready(function() {
 		if(name==""||price==""||des==""||url==""){
 			alert("請輸入完整資訊");
 
-		}else{
+		} else {
 			let jsonData = JSON.stringify(classObj);
 
 			$.ajax({
@@ -265,7 +266,8 @@ $(document).ready(function() {
 				error: function() {
 					alert("失敗");
 				}
-			});}
+			});
+		}
 	});
 
 });
