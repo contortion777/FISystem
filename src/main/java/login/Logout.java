@@ -28,7 +28,7 @@ public class Logout extends HttpServlet {
         if(who=="Host") {
             request.getRequestDispatcher("/HostLogin.jsp").forward(request, response);
         }else if(who=="Guest"){
-            request.getRequestDispatcher("/FI_login.jsp").forward(request, response);
+            request.getRequestDispatcher("/FI_Login.jsp").forward(request, response);
         }
         ResponseStatus responseStatus = new ResponseStatus();
         Date date =new Date();
