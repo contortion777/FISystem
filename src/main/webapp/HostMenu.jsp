@@ -70,7 +70,7 @@
 				}
 				@media (max-width:480px){
 					.container-fluid{
-						padding-top: 100px;
+						padding-top: 50px;
 					}
 					#title{
 						font-size:36px;

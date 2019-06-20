@@ -107,7 +107,8 @@
 														padding:0px;
 														padding-left:30px;
 														width:95%;
-														height:auto;				
+														height:auto;
+														padding-top: 50px;														
 													}
 													#title{
 														font-size:36px;
