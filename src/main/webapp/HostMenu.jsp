@@ -69,8 +69,10 @@
 					font-family:Comic Sans MS;
 				}
 				@media (max-width:480px){
-					#title{
+					.container-fluid{
 						padding-top: 100px;
+					}
+					#title{
 						font-size:36px;
 						width:100%;
 					}
