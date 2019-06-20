@@ -183,6 +183,7 @@
                         <strong style="float:right;font-size:12pt">內用　</strong>
                         <input style="float:right" type="radio" name="radiobutton" value="radiobutton" onclick="check('1')" checked>
                         <input type="hidden" id="type" value="內用">
+                        <input type="hidden" id="act" value="顧客帳號">
                     </div>
                     <table class="table table-hover" id="orderTable">
                     </table>
