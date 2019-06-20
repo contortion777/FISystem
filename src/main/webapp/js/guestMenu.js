@@ -115,7 +115,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#sendOrder').click(function(e) {
         if (menuAry.length !== 0) {
-            let id = $("#act").val();
+            let id = var1;
             let type = $("#type").val();
             let date = getNowFormatDate();
             let price = totalPrice;
@@ -198,8 +198,6 @@ function minusBtn(name) {
 }
 
 function confirmChart() {
-    $("#act").val(var1); // 記錄顧客id
-    console.log($("#act").val());
     let table = $("#orderTable");
     table.html("");
     table.append(

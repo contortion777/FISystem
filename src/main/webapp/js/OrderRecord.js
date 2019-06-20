@@ -1,8 +1,7 @@
 $(document).ready(function() {
-    let acn = $("#act").val();
-    let order = { "Account" : acn, "Status": "已完成" };
+    let order = { "Account" : var1, "Status": "已完成" };
     //let jsonData = JSON.stringify(order);
-
+    console.log("var1" + var1);
     $.ajax({
         //url: "https://fisystem.herokuapp.com/ShowOrderServlet",
         url: "http://localhost:8080/FullImmediately/ShowOrderServlet",
