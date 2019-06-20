@@ -20,14 +20,16 @@ public class Logout extends HttpServlet {
         response.setContentType("text/html");
         Gson gson = new GsonBuilder().disableHtmlEscaping().setFieldNamingPolicy(FieldNamingPolicy.IDENTITY).create();
 
-
+        String who = request.getParameter("Who");
 
 
         HttpSession session=request.getSession();
         session.invalidate();
-
-        request.getRequestDispatcher("/login.jsp").forward(request, response);
-
+        if(who=="Host") {
+            request.getRequestDispatcher("/HostLogin.jsp").forward(request, response);
+        }else if(who=="Guest"){
+            request.getRequestDispatcher("/FI_login.jsp").forward(request, response);
+        }
         ResponseStatus responseStatus = new ResponseStatus();
         Date date =new Date();
         responseStatus.setDate(date.toString());
