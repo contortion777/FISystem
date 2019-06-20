@@ -1,11 +1,6 @@
 package menu.RemoveMenuClass;
 
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.mongodb.*;
-import menu.MenuClassJavabean;
-import tool.HttpCommonAction;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
