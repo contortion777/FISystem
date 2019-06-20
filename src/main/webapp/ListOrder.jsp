@@ -91,7 +91,7 @@
         <a href="HostMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 編輯菜單 </strong></a>
         <a href="ListOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart"></span><strong> 歷史訂單 </strong></a>
         <a href="ManageOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-list"></span><strong> 管理訂單 </strong></a>
-        <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
+        <a action = "https://fisystem.herokuapp.com/Logout?Who=Host" method="post" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
     </form>
 </nav>
 <div class="container">
