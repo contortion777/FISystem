@@ -259,8 +259,8 @@ function getNowFormatDate() {
     return crd;
 }
 var notifyConfig = {
-    body: "\\ ^o^ /",
-    icon: "https://cythilya.github.io/public/favicon.ico"
+    body: "您的餐點做好囉！",
+    icon: "picture/title.jpg"
 }
 
 function createNotify() {
@@ -290,8 +290,8 @@ function notifyMe() {
             title: tagList[times % len] + ' ' + times,
             body: '\\ ^o^ /',
             tag: tagList[times % len],
-            icon: "https://cythilya.github.io/public/favicon.ico",
-            url: 'http://www.ruten.com.tw/'
+            icon: "picture/title.jpg",
+            url: 'https://fisystem.herokuapp.com/GuestMenu.html'
         });
         if (times++ == 20) {
             clearInterval(timerNewArrival);
