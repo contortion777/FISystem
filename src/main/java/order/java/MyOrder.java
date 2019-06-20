@@ -59,7 +59,9 @@ public class MyOrder {
 		System.out.println(MyStatus);
 		if(MyStatus.equals("已完成")|MyStatus.equals("待接受")|MyStatus.equals("待製作")) {
 			query.put("Status", new BasicDBObject("$regex", MyStatus));
-			query.put("CustomerID", new BasicDBObject("$regex", custId));
+
+			if (custId != null)
+				query.put("CustomerID", new BasicDBObject("$regex", custId));
 		}
 		FindIterable<Document> findIterable = collection.find(query);
 		MongoCursor<Document> cursor1 = findIterable.iterator();
