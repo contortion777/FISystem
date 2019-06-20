@@ -94,6 +94,19 @@
                                                     font-family: "微軟正黑體";
                                                     margin-top: 100px;
                                                 }
+												@media (max-width:480px){
+													.container{
+														margin:0px;
+														padding:0px;
+														padding-left:30px;
+														width:95%;
+														height:auto;				
+													}
+													#title{
+														font-size:36px;
+														width:100%;
+													}
+												}
                                             </style>
                                     </head>
 
@@ -101,7 +114,7 @@
                                         <nav class="navbar navbar-expand-sm navbar-fixed-top">
                                             <ul class="navbar-nav mr-auto">
                                                     <img src="picture/title.jpg" alt="馬尚飽" style="width:68px;float:left;">
-                                                    <p style="width:500px;font-size:48px;color:white;font-family:Comic Sans MS">&nbsp;Full Immediately</p>
+                                                    <p id="title">Full Immediately</p>
                                                 
                                             </ul>
                                             <form style="text-align:right">

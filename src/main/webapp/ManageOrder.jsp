@@ -58,6 +58,19 @@
             margin-top: 100px;
             padding-bottom: 70px;
         }
+		#title{
+			width:500px;
+			background-color:#81A3A7;
+			font-size:48px;
+			color:white;
+			font-family:Comic Sans MS;
+		}
+		@media (max-width:480px){
+			#title{
+				font-size:36px;
+				width:100%;
+			}
+		}
     </style>
 
     <script>
@@ -78,7 +91,7 @@
 <nav class="navbar navbar-expand-sm navbar-fixed-top">
     <ul class="navbar-nav mr-auto">
         <img src="picture/title.jpg" style="width:68px;float:left;">
-            <p style="width:500px;font-size:48px;color:white;font-family:Comic Sans MS">&nbsp;Full Immediately</p>
+            <p id="title">Full Immediately</p>
         
     </ul>
     <form style="text-align:right">
