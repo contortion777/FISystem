@@ -250,10 +250,10 @@ function loadAccept() {
                     '<h4>總金額 : ' + tprice + '元</h4>' +
                     '<button id="button' + oid + '" type="submit" class="btn btn-success pull-right" onClick = "readyToMake(\'' + psid + '\', \'' + oid + '\')">開始製作</button><button class="btn btn-danger" data-toggle="modal"  onClick = "refuseToMake(\'' + psid + '\', \'' + oid + '\')" data-target="#confirm-delete' + oid + '">刪除訂單</button>'
                 );
-                if (allOrder[j].Type === "外帶") {
-                    var target = "#button" + oid;
+                if (type === "外帶") {
+                    let target = "#button" + oid;
                     $(target).attr('onClick', false);
-                    var dataTarget = "#confirm-predictTime" + oid;
+                    let dataTarget = "#confirm-predictTime" + oid;
                     $(target).attr('data-toggle', 'modal');
                     $(target).attr('data-target', dataTarget);
 
@@ -312,6 +312,7 @@ function readyToMake(cosid, oid) {
         data: jsonData2,
         success: function(data) {
 			//alert("已成功接受");
+            window.location.reload();
             console.log("成功");
         },
         error: function() {
