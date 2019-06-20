@@ -162,6 +162,10 @@ $(document).ready(function() {
 			"Name": text_data2,
 			"Price" : price_data2
 		};
+		if(text_data2==""||price_data2==""){
+			alert("請輸入名稱或價錢");
+			
+		}else{
 		let jsonData = JSON.stringify(order);
 		let ulr = "https://fisystem.herokuapp.com/UpdateMenu?name=" + old_name;
 		console.log(ulr);
@@ -179,7 +183,7 @@ $(document).ready(function() {
 				alert("失敗");
 			}
 
-		});
+		});}
 	});
 	
 	//刪除餐點種類
@@ -210,6 +214,10 @@ $(document).ready(function() {
 			"ClassName" : name,
 			"url" : url
 		};
+		if(text_data2==""||price_data2==""){
+			alert("請輸入名稱或價錢");
+			
+		}else{
 		let jsonData = JSON.stringify(classObj);
 
 		$.ajax({
@@ -224,7 +232,7 @@ $(document).ready(function() {
 			error: function() {
 				alert("失敗");
 			}
-		});
+		});}
 	});
 
 	//新增套餐
@@ -239,6 +247,10 @@ $(document).ready(function() {
 			"Description" : des,
 			"url" : url
 		};
+		if(text_data2==""||price_data2==""){
+			alert("請輸入名稱或價錢");
+			
+		}else{
 		let jsonData = JSON.stringify(classObj);
 
 		$.ajax({
@@ -253,7 +265,7 @@ $(document).ready(function() {
 			error: function() {
 				alert("失敗");
 			}
-		});
+		});}
 	});
 
 });
