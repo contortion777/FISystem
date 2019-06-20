@@ -12,6 +12,8 @@ import java.io.IOException;
 @WebServlet(name = "ShowOrderServlet", urlPatterns = { "/ShowOrderServlet" })
 public class ShowOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
+
         String MyStatus = request.getParameter("Status");
         String who = request.getParameter("Account");
         ////////////////////////////////////////// 上面這裡要填老闆端給的參數 決定要拿的菜單狀態 或是 拿到客人ID
