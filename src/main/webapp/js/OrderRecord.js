@@ -1,8 +1,16 @@
 $(document).ready(function() {
+
+    let order = {
+        "Account" : "00557108",
+        "Status": "已完成",
+    };
+    let jsonData = JSON.stringify(order);
+
     $.ajax({
-        type: "GET",
-        url: "https://fisystem.herokuapp.com/ShowOrderServlet?Status=已完成",
-        dataType: "json",
+        type: "POST",
+        data: jsonData,
+        dataType: "text",
+        url: "https://fisystem.herokuapp.com/ShowOrderServlet",
         success: function(data) {
             var allOrder = [];
 
