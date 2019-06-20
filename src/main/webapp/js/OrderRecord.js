@@ -21,13 +21,13 @@ $(document).ready(function() {
             }
 			console.log(data);
             for (var j = 0; j < allOrder.length; j++) {
-				if(allOrder[j].CustomerID == "00557108"){
-					var oid = allOrder[j]._id.$oid;
-					var psid = allOrder[j].CustomerID;
-					var tprice = allOrder[j].TotalPrice;
-					var date = allOrder[j].date.split(" ")[0] + "@" + allOrder[j].date.split(" ")[1];
-					var type = allOrder[j].Type;
-					var number = allOrder[j].Number;
+				var oid = allOrder[j]._id.$oid;
+				var psid = allOrder[j].CustomerID;
+				var tprice = allOrder[j].TotalPrice;
+				var date = allOrder[j].date.split(" ")[0] + "@" + allOrder[j].date.split(" ")[1];
+				var type = allOrder[j].Type;
+				var number = allOrder[j].Number;
+				if(psid == "00557108"){
 					$('#Record').append(
 						'<div style="text-align:center; font-family:Noto Sans TC; background-color:white" class="card" id="card' + oid + '">' +
 						'<div class="card-header card-header-info"><h4 class="card-title">' + allOrder[j].Type + '訂單 第' + allOrder[j].Number + '號</h4>' +
