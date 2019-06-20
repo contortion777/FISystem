@@ -127,8 +127,12 @@ $(document).ready(function() {
 			"Name": text_data2,
 			"Price" : price_data2
 		};
-		let jsonData = JSON.stringify(order);
-
+		if(text_data2==""||price_data2==""){
+			alert("新增失敗！");
+		}
+		else{
+			let jsonData = JSON.stringify(order);
+		}
 		$.ajax({
 			url: "https://fisystem.herokuapp.com/AddMenu",
 			data: jsonData, //data只能指定單一物件
