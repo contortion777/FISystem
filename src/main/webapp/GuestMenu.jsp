@@ -34,34 +34,34 @@
         .body {
             font-family: 'Noto Sans TC';
         }
-        
+
         .affix {
             top: 0;
             width: 100%;
             -webkit-transition: all .5s ease-in-out;
             transition: all .5s ease-in-out;
         }
-        
+
         .affix-top {
             position: static;
             top: -35px;
         }
-        
+
         .affix+.container-fluid {
             padding-top: 70px;
         }
-        
+
         nav {
             background-color: #C2D3DA;
         }
-        
+
         body {
             background-color: #F1F3F2;
             font-family: "微軟正黑體";
             margin-top: 100px;
             padding-bottom: 70px;
         }
-        
+
         .qty .count {
             color: #585A56;
             display: inline-block;
@@ -73,7 +73,7 @@
             min-width: 35px;
             text-align: center;
         }
-        
+
         .thumbnail .count {
             display: inline-block;
             vertical-align: top;
@@ -85,41 +85,41 @@
             text-align: center;
         }
         /*Prevent text selection*/
-        
+
         span {
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
         }
-        
+
         input {
             border: 0;
             width: 2%;
             font-size: 20px;
         }
-        
+
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
-        
+
         input:disabled {
             background-color: white;
         }
-		#title{
-			width:500px;
-			background-color:#81A3A7;
-			font-size:48px;
-			color:white;
-			font-family:Comic Sans MS;
-		}
-		@media (max-width:480px){
-			#title{
-				font-size:36px;
-				width:100%;
-			}
-		}
+        #title{
+            width:500px;
+            background-color:#81A3A7;
+            font-size:48px;
+            color:white;
+            font-family:Comic Sans MS;
+        }
+        @media (max-width:480px){
+            #title{
+                font-size:36px;
+                width:100%;
+            }
+        }
     </style>
     <script>
         var var1 = "";
@@ -135,61 +135,61 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-fixed-top">
-        <ul class="navbar-nav mr-auto">
-            <img src="picture/title.jpg" alt="馬尚飽" style="width:68px;float:left;">
-            <p id="title">Full Immediately</p>
-        </ul>
-        <form style="text-align:right">
-			<a id="three-tab" data-toggle="tab" href="#chartPanel" role="tab" aria-controls="chartPanel" onclick="confirmChart()" style="color:#666666"><span  class="glyphicon glyphicon-shopping-cart"></span><strong> 購物車 </strong></a>
-            <a href="GuestMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
-            <a href="OrderRecord.jsp" style="color:#666666"><span class="glyphicon glyphicon-list-alt"></span><strong> 點餐紀錄 </strong></a>
-            <a action = "https://fisystem.herokuapp.com/Logout?Who=Guset" method="post" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
-    </nav>
-    <div class="container-fluid">
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item">
-                <a class="nav-link" style="background-color:#585A56;color:white">Menu</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" id="one-tab" data-toggle="tab" href="#alacartePanel" role="tab" aria-controls="alacartePanel" style="color:#272424"><strong>單點</strong></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" id="two-tab" data-toggle="tab" href="#setMenuPanel" role="tab" aria-controls="setMenuPanel" style="color:#272424"><strong>套餐</strong></a>
-            </li>
-        </ul>
-        <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade active in" id="alacartePanel" role="tabpanel" aria-labelledby="one-tab">
-                <ul class="list-group" id="list">
-                </ul>
-            </div>
-            <div class="tab-pane fade" id="setMenuPanel" role="tabpanel" aria-labelledby="two-tab">
-                <div class="row" id="setRow"></div>
-            </div>
-            <div class="tab-pane fade" id="chartPanel" role="tabpanel" aria-labelledby="three-tab">
-                <br>
-                <div class="panel panel-default">
-                    <!-- Default panel contents -->
-                    <div class="panel-heading" style="background-color:#666666;color: white">
-                        <span style="font-size:16pt" style="text-align:center">我的餐點</span>
-                        <strong style="float:right;font-size:12pt">外帶</strong>
-                        <input style="float:right" type="radio" name="radiobutton" value="radiobutton" onclick="check('0')" checked>
-                        <strong style="float:right;font-size:12pt">內用　</strong>
-                        <input style="float:right" type="radio" name="radiobutton" value="radiobutton" onclick="check('1')" checked>
-                        <input type="hidden" id="type" value="內用">
-                    </div>
-                    <table class="table table-hover" id="orderTable">
-                    </table>
+<nav class="navbar navbar-expand-sm navbar-fixed-top">
+    <ul class="navbar-nav mr-auto">
+        <img src="picture/title.jpg" alt="馬尚飽" style="width:68px;float:left;">
+        <p id="title">Full Immediately</p>
+    </ul>
+    <form style="text-align:right">
+        <a id="three-tab" data-toggle="tab" href="#chartPanel" role="tab" aria-controls="chartPanel" onclick="confirmChart()" style="color:#666666"><span  class="glyphicon glyphicon-shopping-cart"></span><strong> 購物車 </strong></a>
+        <a href="GuestMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
+        <a href="OrderRecord.jsp" style="color:#666666"><span class="glyphicon glyphicon-list-alt"></span><strong> 點餐紀錄 </strong></a>
+        <a action = "https://fisystem.herokuapp.com/Logout?Who=Guset" method="post" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
+</nav>
+<div class="container-fluid">
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link" style="background-color:#585A56;color:white">Menu</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" id="one-tab" data-toggle="tab" href="#alacartePanel" role="tab" aria-controls="alacartePanel" style="color:#272424"><strong>單點</strong></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="two-tab" data-toggle="tab" href="#setMenuPanel" role="tab" aria-controls="setMenuPanel" style="color:#272424"><strong>套餐</strong></a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade active in" id="alacartePanel" role="tabpanel" aria-labelledby="one-tab">
+            <ul class="list-group" id="list">
+            </ul>
+        </div>
+        <div class="tab-pane fade" id="setMenuPanel" role="tabpanel" aria-labelledby="two-tab">
+            <div class="row" id="setRow"></div>
+        </div>
+        <div class="tab-pane fade" id="chartPanel" role="tabpanel" aria-labelledby="three-tab">
+            <br>
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading" style="background-color:#666666;color: white">
+                    <span style="font-size:16pt" style="text-align:center">我的餐點</span>
+                    <strong style="float:right;font-size:12pt">外帶</strong>
+                    <input style="float:right" type="radio" name="radiobutton" value="radiobutton" onclick="check('0')" checked>
+                    <strong style="float:right;font-size:12pt">內用　</strong>
+                    <input style="float:right" type="radio" name="radiobutton" value="radiobutton" onclick="check('1')" checked>
+                    <input type="hidden" id="type" value="內用">
                 </div>
-                <button id="sendOrder" style="background-color:#888888;float:right;color:white" class="btn btn-default" type="submit">送出</button>
-                <button onclick="createNotify()">Create Notify!</button>
-                <button onclick="notifyMe()">Notify me!</button>
+                <table class="table table-hover" id="orderTable">
+                </table>
             </div>
+            <button id="sendOrder" style="background-color:#888888;float:right;color:white" class="btn btn-default" type="submit">送出</button>
+            <button onclick="createNotify()">Create Notify!</button>
+            <button onclick="notifyMe()">Notify me!</button>
         </div>
     </div>
-    <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
-        <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
-    </nav>
+</div>
+<nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
+    <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
+</nav>
 </body>
 
 </html>

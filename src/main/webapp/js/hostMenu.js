@@ -1,84 +1,84 @@
 $(document).ready(function() {
-    $.ajax({
-        //抓菜單種類
-        type: "GET",
-        url: "https://fisystem.herokuapp.com/ShowMenuClass",
-        dataType: "json",
-        success: function(data) {
-            let foodClassnameArray = [];
-            for (let i = 0; i < data.length; i++) {
-                // food
-                let foodClass = data[i];
-                // food class name
-                let className = foodClass.ClassName;
-                foodClassnameArray.push(className);
-            }
-            // filt same class name
-            let foodClassnames = foodClassnameArray.filter(function(element, index, arr) {
-                return arr.indexOf(element) === index;
-            });
+	$.ajax({
+		//抓菜單種類
+		type: "GET",
+		url: "https://fisystem.herokuapp.com/ShowMenuClass",
+		dataType: "json",
+		success: function(data) {
+			let foodClassnameArray = [];
+			for (let i = 0; i < data.length; i++) {
+				// food
+				let foodClass = data[i];
+				// food class name
+				let className = foodClass.ClassName;
+				foodClassnameArray.push(className);
+			}
+			// filt same class name
+			let foodClassnames = foodClassnameArray.filter(function(element, index, arr) {
+				return arr.indexOf(element) === index;
+			});
 
-            for (let q = 0; q < foodClassnames.length; q++) {
+			for (let q = 0; q < foodClassnames.length; q++) {
 
-                let foodClassname = foodClassnames[q];
+				let foodClassname = foodClassnames[q];
 
-                // menu panel add class
-                    $("#list").append(
-					'<li class="list-group-item">' + 
-                        '<div class="row">' +
-							'<button type="button" class="close" data-toggle="modal" data-target="#exampleModal6" onclick="deleteMenuClass(\'' + foodClassname + '\')" aria-label="Close" data-dismiss="modal">' + 
-								'<span aria-hidden="true">x</span>' + '</button>' +
-                            '<div class="col-sm-3">' +
-                                '<img src="'+data[q].url+'" class="img-responsive">' +
-                            '</div>' +
-                            '<div class="col-sm-9">' +
-                                '<div class="product_text right">' +
-                                    '<h1 class="sub_title">' +
-                                        '<strong style="color:#585A56">' + foodClassname + '</strong>' +
-                                        '<button type="button" style="background-color:#B5C1B4;color:white;" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal3" onclick="addMenu(\'' + foodClassname + '\')">新增餐點</button>' +
-									'</h1>' +
-                                    '<div id="' + foodClassname + 'li" class="qty mt-5"style="float:left;width:100%"></div>' +
-                                '</div>' +
-                            '</div>' +
-                        '</div>' + 
+				// menu panel add class
+				$("#list").append(
+					'<li class="list-group-item">' +
+					'<div class="row">' +
+					'<button type="button" class="close" data-toggle="modal" data-target="#exampleModal6" onclick="deleteMenuClass(\'' + foodClassname + '\')" aria-label="Close" data-dismiss="modal">' +
+					'<span aria-hidden="true">x</span>' + '</button>' +
+					'<div class="col-sm-3">' +
+					'<img src="'+data[q].url+'" class="img-responsive">' +
+					'</div>' +
+					'<div class="col-sm-9">' +
+					'<div class="product_text right">' +
+					'<h1 class="sub_title">' +
+					'<strong style="color:#585A56">' + foodClassname + '</strong>' +
+					'<button type="button" style="background-color:#B5C1B4;color:white;" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal3" onclick="addMenu(\'' + foodClassname + '\')">新增餐點</button>' +
+					'</h1>' +
+					'<div id="' + foodClassname + 'li" class="qty mt-5"style="float:left;width:100%"></div>' +
+					'</div>' +
+					'</div>' +
+					'</div>' +
 					'</li>'
-                    );
-               
-                // set food of each class
+				);
 
-            }
-        },
-        error: function() {
-            console.log("can not GET")
-        }
-    });
+				// set food of each class
+
+			}
+		},
+		error: function() {
+			console.log("can not GET")
+		}
+	});
 });
 
 $(document).ready(function() {
-    $.ajax({
-        //抓菜單
-        type: "GET",
-        url: "https://fisystem.herokuapp.com/ShowAllMenu",
-        dataType: "json",
-        success: function(data) {
+	$.ajax({
+		//抓菜單
+		type: "GET",
+		url: "https://fisystem.herokuapp.com/ShowAllMenu",
+		dataType: "json",
+		success: function(data) {
 
-            for (let q = 0; q < data.length; q++) {
-                let classname = data[q].ClassName;
-                let name = data[q].Name;
-                let price = data[q].Price;
-                let div = "#" + classname + "li";
+			for (let q = 0; q < data.length; q++) {
+				let classname = data[q].ClassName;
+				let name = data[q].Name;
+				let price = data[q].Price;
+				let div = "#" + classname + "li";
 				$(div).append(
-					'<div class="well well-sm" style="float:left;width:33%">' + 
-							'<strong style="font-size:16px"><span style="float:left">' + name + '</span><span style="float:right">' + '$' + price +
-							'<button type="button" style="margin-left:8px;background-color:#81A3A7;color:white;" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal5" onclick="updateMenu(\'' + name + '\',\''+ classname + '\')">修改</button></span></strong>' +
+					'<div class="well well-sm" style="float:left;width:33%">' +
+					'<strong style="font-size:16px"><span style="float:left">' + name + '</span><span style="float:right">' + '$' + price +
+					'<button type="button" style="margin-left:8px;background-color:#81A3A7;color:white;" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal5" onclick="updateMenu(\'' + name + '\',\''+ classname + '\')">修改</button></span></strong>' +
 					'</div>'
 				);
 			}
-        },
-        error: function() {
-            console.log("can not GET")
-        }
-    });
+		},
+		error: function() {
+			console.log("can not GET")
+		}
+	});
 });
 
 $(document).ready(function() {
@@ -129,11 +129,11 @@ $(document).ready(function() {
 		};
 		if(text_data2==""||price_data2==""){
 			alert("請輸入名稱或價錢");
-			
+
 		}
 		else{
 			let jsonData = JSON.stringify(order);
-		
+
 			$.ajax({
 				url: "https://fisystem.herokuapp.com/AddMenu",
 				data: jsonData, //data只能指定單一物件
@@ -150,7 +150,7 @@ $(document).ready(function() {
 			});
 		}
 	});
-	
+
 	//修改餐點
 	$('#UpdateMenu').click(function() {
 		let old_name = $('#oldMenu').val();
@@ -164,28 +164,28 @@ $(document).ready(function() {
 		};
 		if(text_data2==""||price_data2==""){
 			alert("請輸入名稱或價錢");
-			
-		}else{
-		let jsonData = JSON.stringify(order);
-		let ulr = "https://fisystem.herokuapp.com/UpdateMenu?name=" + old_name;
-		console.log(ulr);
-		console.log(jsonData);
-		$.ajax({
-			url: ulr,
-			data: jsonData, //data只能指定單一物件
-			dataType: "text",
-			type: "Post",
-			success: function() {
-				alert("修改成功！");
-				window.location.reload()
-			},
-			error: function() {
-				alert("失敗");
-			}
 
-		});}
+		}else{
+			let jsonData = JSON.stringify(order);
+			let ulr = "https://fisystem.herokuapp.com/UpdateMenu?name=" + old_name;
+			console.log(ulr);
+			console.log(jsonData);
+			$.ajax({
+				url: ulr,
+				data: jsonData, //data只能指定單一物件
+				dataType: "text",
+				type: "Post",
+				success: function() {
+					alert("修改成功！");
+					window.location.reload()
+				},
+				error: function() {
+					alert("失敗");
+				}
+
+			});}
 	});
-	
+
 	//刪除餐點種類
 	$('#DeleteMenu').click(function(e) {
 		let dclassname = $('#deleteMenuClass').val();
@@ -205,7 +205,7 @@ $(document).ready(function() {
 			}
 		});
 	});
-	
+
 	//新增餐點種類
 	$('#uploadClass').click(function(e) {
 		let name = $('#className').val();
@@ -216,23 +216,23 @@ $(document).ready(function() {
 		};
 		if(name==""||url==""){
 			alert("請輸入名稱或加入檔案");
-			
-		}else{
-		let jsonData = JSON.stringify(classObj);
 
-		$.ajax({
-			url: "https://fisystem.herokuapp.com/AddMenuClass",
-			data: jsonData, //data只能指定單一物件
-			dataType: "text",
-			type: "Post",
-			success: function() {
-				alert("新增成功！");
-				window.location.reload()
-			},
-			error: function() {
-				alert("失敗");
-			}
-		});}
+		}else{
+			let jsonData = JSON.stringify(classObj);
+
+			$.ajax({
+				url: "https://fisystem.herokuapp.com/AddMenuClass",
+				data: jsonData, //data只能指定單一物件
+				dataType: "text",
+				type: "Post",
+				success: function() {
+					alert("新增成功！");
+					window.location.reload()
+				},
+				error: function() {
+					alert("失敗");
+				}
+			});}
 	});
 
 	//新增套餐
@@ -249,23 +249,23 @@ $(document).ready(function() {
 		};
 		if(name==""||price==""||des==""||url==""){
 			alert("請輸入完整資訊");
-			
-		}else{
-		let jsonData = JSON.stringify(classObj);
 
-		$.ajax({
-			url: "https://fisystem.herokuapp.com/AddSet",
-			data: jsonData, //data只能指定單一物件
-			dataType: "text",
-			type: "Post",
-			success: function() {
-				alert("新增成功！");
-				window.location.reload()
-			},
-			error: function() {
-				alert("失敗");
-			}
-		});}
+		}else{
+			let jsonData = JSON.stringify(classObj);
+
+			$.ajax({
+				url: "https://fisystem.herokuapp.com/AddSet",
+				data: jsonData, //data只能指定單一物件
+				dataType: "text",
+				type: "Post",
+				success: function() {
+					alert("新增成功！");
+					window.location.reload()
+				},
+				error: function() {
+					alert("失敗");
+				}
+			});}
 	});
 
 });
