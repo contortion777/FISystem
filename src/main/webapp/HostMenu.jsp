@@ -70,6 +70,7 @@
 				}
 				@media (max-width:480px){
 					#title{
+						padding-top: 100px;
 						font-size:36px;
 						width:100%;
 					}
@@ -96,10 +97,10 @@
                 
             </ul>
             <form style="text-align:right">
-                <a href="HostMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery" /><strong> 編輯菜單 </strong></a>
-                <a href="ListOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart" /><strong> 歷史訂單 </strong></a>
-                <a href="ManageOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-list" /><strong> 管理訂單 </strong></a>
-                <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-off" /><strong> 登出</strong></a>
+                <a href="HostMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery" /><strong>編輯菜單 </strong></a>
+                <a href="ListOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart" /><strong>歷史訂單 </strong></a>
+                <a href="ManageOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-list" /><strong>管理訂單 </strong></a>
+                <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-off" /><strong>登出</strong></a>
             </form>
         </nav>
         <div class="container-fluid">
