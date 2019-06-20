@@ -214,8 +214,8 @@ $(document).ready(function() {
 			"ClassName" : name,
 			"url" : url
 		};
-		if(text_data2==""||price_data2==""){
-			alert("請輸入名稱或價錢");
+		if(name==""||url==""){
+			alert("請輸入名稱或加入檔案");
 			
 		}else{
 		let jsonData = JSON.stringify(classObj);
@@ -247,8 +247,8 @@ $(document).ready(function() {
 			"Description" : des,
 			"url" : url
 		};
-		if(text_data2==""||price_data2==""){
-			alert("請輸入名稱或價錢");
+		if(name==""||price==""||des==""||url==""){
+			alert("請輸入完整資訊");
 			
 		}else{
 		let jsonData = JSON.stringify(classObj);
