@@ -128,25 +128,27 @@ $(document).ready(function() {
 			"Price" : price_data2
 		};
 		if(text_data2==""||price_data2==""){
-			alert("新增失敗！");
+			alert("請輸入名稱或價錢");
+			
 		}
 		else{
 			let jsonData = JSON.stringify(order);
-		}
-		$.ajax({
-			url: "https://fisystem.herokuapp.com/AddMenu",
-			data: jsonData, //data只能指定單一物件
-			dataType: "text",
-			type: "Post",
-			success: function() {
-				alert("新增成功！");
-				window.location.reload()
-			},
-			error: function() {
-				alert("失敗");
-			}
+		
+			$.ajax({
+				url: "https://fisystem.herokuapp.com/AddMenu",
+				data: jsonData, //data只能指定單一物件
+				dataType: "text",
+				type: "Post",
+				success: function() {
+					alert("新增成功！");
+					window.location.reload()
+				},
+				error: function() {
+					alert("失敗");
+				}
 
-		});
+			});
+		}
 	});
 	
 	//修改餐點
