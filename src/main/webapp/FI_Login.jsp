@@ -1,15 +1,15 @@
-<!doctype html>
-<html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<html>
 
 <head>
-    <title>馬尚飽—註冊</title>
+    <title>馬尚飽—登入</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional" rel="stylesheet">
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -19,42 +19,6 @@
 
     <!-- ajax -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
-    <script>
-        function signup() {
-            const nameElement = document.getElementById("name");
-            const name = nameElement.value;
-            const mailElement = document.getElementById("mail");
-            const mail = mailElement.value;
-            const accountElement = document.getElementById("account");
-            const account = accountElement.value;
-            const passwordElement = document.getElementById("password");
-            const password = passwordElement.value;
-            var data123 = {
-                "account": account,
-                "password": password,
-                "Email": mail,
-                "username": name
-            };
-            console.log(data123);
-            var url = "https://fisystem.herokuapp.com/SignupServlet";
-            var jsonData = JSON.stringify(data123);
-            $.ajax({
-                type: "POST",
-                url: url,
-                dataType: "json",
-                data: jsonData,
-                success: function() {
-                    alert("註冊成功");
-                    window.location.href = "FI_Login.html";
-                },
-                error: function() {
-                    alert("失敗");
-                }
-            });
-
-        }
-    </script>
     <style>
         .affix {
             top: 0;
@@ -78,7 +42,7 @@
         
         body {
             background-color: #F1F3F2;
-            font-family: "Noto Sans TC";
+            font-family: "微軟正黑體";
             margin-top: 100px;
         }
 		#title{
@@ -90,9 +54,11 @@
 		}
 		@media (max-width:480px){
 			.container{
-				margin:0px;	
-				padding-top: 100px;
-				padding-bottom: 100px;				
+				margin:0px;
+				padding:0px;
+				padding-left:30px;
+				width:95%;
+				height:auto;				
 			}
 			#title{
 				font-size:36px;
@@ -103,38 +69,37 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-sm navbar-fixed-top">
         <ul class="navbar-nav mr-auto">
             <img src="picture/title.jpg" style="width:68px;float:left;"></img>
             <p id="title">Full Immediately</p>
+
         </ul>
+        <form style="text-align:right">
+            <a href="FI_SignUp.html" style="color:#666666"><span class="glyphicon glyphicon-saved"></span><strong> 去註冊</strong></a>
+            <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-globe"></span><strong> 我是老闆</strong></a>
+        </form>
     </nav>
     <div class="container">
         <div>
             <div class="row">
                 <div class="col-md-offset-4 col-md-4">
-                    <form style="width:100%;valign:center">
-                        <div class="form-group" style="text-align:center">
-                            <label>姓名</label>
-                            <input id="name" class="form-control" placeholder="姓名">
+                    <form>
+                        <div style="font-size:100px;text-align:center;" class="form-group">
+                            <img src="picture/title.jpg" style="width:100px;"></img>
                         </div>
-                        <div class="form-group" style="text-align:center">
-                            <label>信箱(Gmail)</label>
-                            <input id="mail" class="form-control" placeholder="Gmail">
-                        </div>
-                        <div class="form-group" style="text-align:center">
+                        <div style="width:330px;text-align:center;" class="form-group">
                             <label>帳號</label>
-                            <input id="account" class="form-control" placeholder="帳號">
+                            <input class="form-control" placeholder="輸入帳號">
                         </div>
-                        <div class="form-group" style="text-align:center">
+                        <div style="width:330px;text-align:center;" class="form-group">
                             <label>密碼</label>
-                            <input id="password" class="form-control" placeholder="密碼">
+                            <input class="form-control" placeholder="輸入密碼">
+                        </div>
+                        <div style="text-align:center" class="form-group">
+                            <button style="background-color:#81A3A7; color:white;" class="btn btn-outline-light" type="button" onclick="window.location.href='GuestMenu.html'">登入</button>
                         </div>
                     </form>
-                    <div style="text-align:center">
-                        <button style="background-color:#81A3A7; color:white;" class="btn btn-outline-light" onclick="signup()">Save</button>
-                    </div>
                 </div>
             </div>
         </div>
