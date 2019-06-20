@@ -143,7 +143,7 @@
         <form style="text-align:right">
 			<a id="three-tab" data-toggle="tab" href="#chartPanel" role="tab" aria-controls="chartPanel" onclick="confirmChart()" style="color:#666666"><span  class="glyphicon glyphicon-shopping-cart"></span><strong> 購物車 </strong></a>
             <a href="GuestMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
-            <a href="OrderRecord.html" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart"></span><strong> 點餐紀錄 </strong></a>
+            <a href="OrderRecord.html" style="color:#666666"><span class="glyphicon glyphicon-list-alt"></span><strong> 點餐紀錄 </strong></a>
             <a action = "https://fisystem.herokuapp.com/Logout?Who=Guset" method="post" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
     </nav>
     <div class="container-fluid">
