@@ -7,10 +7,10 @@ $(document).ready(function() {
     let jsonData = JSON.stringify(order);
 
     $.ajax({
-        type: "POST",
+        url: "https://fisystem.herokuapp.com/ShowOrderServlet",
         data: jsonData,
         dataType: "text",
-        url: "https://fisystem.herokuapp.com/ShowOrderServlet",
+        type: "Post",
         success: function(data) {
             var allOrder = [];
 
