@@ -94,6 +94,13 @@
                                                     font-family: "微軟正黑體";
                                                     margin-top: 100px;
                                                 }
+												#title{
+													width:500px;
+													background-color:#81A3A7;
+													font-size:48px;
+													color:white;
+													font-family:Comic Sans MS;
+												}
 												@media (max-width:480px){
 													.container{
 														margin:0px;
