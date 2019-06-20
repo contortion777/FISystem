@@ -38,14 +38,10 @@ public class MyOrder {
 
 	public void connectDb() {
 
-
 		try {
 			mongoClient = new MongoClient(new MongoClientURI("mongodb://tonyhu:fisystem777@ds135456.mlab.com:35456/heroku_qww5lpsp"));
 			mongoDatabase = mongoClient.getDatabase("heroku_qww5lpsp");
 			collection = mongoDatabase.getCollection("Order");
-
-
-
 
 		} catch (Exception e) {
 			System.err.println(e.getClass().getName() + ": " + e.getMessage());
@@ -57,11 +53,11 @@ public class MyOrder {
 		//BasicDBObject fields = new BasicDBObject().append( 1); // SELECT name
 		BasicDBObject query = new BasicDBObject();
 		System.out.println(MyStatus);
-		if(MyStatus.equals("已完成")|MyStatus.equals("待接受")|MyStatus.equals("待製作")) {
-			query.put("Status", new BasicDBObject("$regex", MyStatus));
-
-			if (custId != null)
-				query.put("CustomerID", new BasicDBObject("$regex", custId));
+		if (custId != null)		//顧客端要查看 不需要區分訂單狀態
+			query.put("CustomerID", new BasicDBObject("$regex", custId));
+		else {
+			//if (MyStatus.equals("已完成") | MyStatus.equals("待接受") | MyStatus.equals("待製作"))
+				query.put("Status", new BasicDBObject("$regex", MyStatus));
 		}
 		FindIterable<Document> findIterable = collection.find(query);
 		MongoCursor<Document> cursor1 = findIterable.iterator();
@@ -81,6 +77,7 @@ public class MyOrder {
 		}
 		order = jsonArray;
 	}
+
 	public void getDateOrder(String year,String month,String day) throws ParseException {
 		String myDate1=year+"-"+month+"-"+day+" 0:0:0";
 		String myDate2;
@@ -146,7 +143,4 @@ public class MyOrder {
 		order = jsonArray;
 		
 	}
-
-
-
 }
