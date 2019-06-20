@@ -311,7 +311,7 @@ function readyToMake(cosid, oid) {
         dataType: "json",
         data: jsonData2,
         success: function(data) {
-			alert("已成功接受");
+			//alert("已成功接受");
             console.log("成功");
         },
         error: function() {
@@ -356,7 +356,7 @@ function refuseToMake(cosid,ooid) {
         dataType: "json",
         data: jsonData,
         success: function() {
-            alert("成功拒絕");
+            //alert("成功拒絕");
             window.location.reload();
         },
         error: function() {
@@ -404,7 +404,7 @@ function finishedList(cosid, oid) {
         dataType: "json",
         data: jsonData2,
         success: function(data) {
-			alert("完成");
+			//alert("完成");
             console.log("成功");
         },
         error: function() {
