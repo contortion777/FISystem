@@ -37,11 +37,9 @@
                 "Email": mail,
                 "username": name
             };
-			if(name==""||mail==""||account==""||password==""){
-				alert("請輸入完整資料");
-			}
+			
             console.log(data123);
-			else{
+			
             var url = "https://fisystem.herokuapp.com/SignupServlet";
             var jsonData = JSON.stringify(data123);
             $.ajax({
@@ -57,7 +55,7 @@
                     alert("失敗");
                 }
             });
-			}
+			
         }
     </script>
     <style>
@@ -122,20 +120,20 @@
                     <form style="width:100%;valign:center">
                         <div class="form-group" style="text-align:center">
                             <label>姓名</label>
-                            <input id="name" class="form-control" placeholder="姓名" required>
+                            <input id="name" class="form-control" placeholder="姓名">
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>信箱(Gmail)</label>
-                            <input id="mail" class="form-control" placeholder="Gmail" required>
+                            <input id="mail" class="form-control" placeholder="Gmail">
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>帳號</label>
-                            <input id="account" class="form-control" placeholder="帳號" required>
+                            <input id="account" class="form-control" placeholder="帳號">
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>密碼</label>
 
-                             <input type = "password" id="password" class="form-control" placeholder="密碼" required>
+                             <input type = "password" id="password" class="form-control" placeholder="密碼">
 
                         </div>
                     </form>
