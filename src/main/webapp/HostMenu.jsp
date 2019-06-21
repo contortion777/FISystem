@@ -102,7 +102,7 @@
         <a href="HostMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery" /><strong>編輯菜單 </strong></a>
         <a href="ListOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart" /><strong>歷史訂單 </strong></a>
         <a href="ManageOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-list" /><strong>管理訂單 </strong></a>
-        <a action = "https://fisystem.herokuapp.com/Logout?Who=Host" method="post" style="color:#666666"><span class="glyphicon glyphicon-off" /><strong>登出</strong></a>
+        <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
     </form>
 </nav>
 <div class="container-fluid">
@@ -225,28 +225,6 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">刪除餐點種類</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <label for="recipient-name" class="col-form-label">請選擇要刪除的餐點種類：</label>
-                    <select id='selectname2'></select>
-                    <br>
-                    <input data-dismiss="modal" id="deleteNew" type="submit" />
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <!-- <button type="submit" class="btn bg-primary" id="upload">新增</button> -->
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -276,6 +254,28 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">刪除餐點</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- 這個input看不到 拿來放classname -->
+                    <input type="hidden" id="deleteMenu" value="隱藏欄位值">
+                    <h1>確定要刪除嗎?</h1>
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn bg-primary" id="deletemenubtn">確定</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="exampleModal6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -292,7 +292,29 @@
                     <br>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn bg-primary" id="DeleteMenu">確定</button>
+                    <button type="submit" class="btn bg-primary" id="DeleteClass">確定</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModal7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">刪除套餐</h3>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- 這個input看不到 拿來放classname -->
+                    <input type="hidden" id="deleteSet" value="隱藏欄位值">
+                    <h1>確定要刪除嗎?</h1>
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn bg-primary" id="deletesetbtn">確定</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>

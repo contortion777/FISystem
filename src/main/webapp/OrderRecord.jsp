@@ -79,24 +79,24 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-fixed-top">
-        <ul class="navbar-nav mr-auto">
-            <img src="picture/title.jpg" style="width:68px;float:left;">
-            <p id="title">Full Immediately</p>
-        </ul>
-        <form style="text-align:right">
-            <a href="GuestMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
-            <a href="OrderRecord.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart"></span><strong> 點餐紀錄 </strong></a>
-            <a href="FI_Login.html" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
-        </form>
-    </nav>
-    <div class="container-fluid">
-        <div class="col-md-4" id="Record">
-        </div>
+<nav class="navbar navbar-expand-sm navbar-fixed-top">
+    <ul class="navbar-nav mr-auto">
+        <img src="picture/title.jpg" style="width:68px;float:left;">
+        <p id="title">Full Immediately</p>
+    </ul>
+    <form style="text-align:right">
+        <a href="GuestMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 瀏覽菜單 </strong></a>
+        <a href="OrderRecord.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart"></span><strong> 點餐紀錄 </strong></a>
+        <a href="FI_Login.jsp" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
+    </form>
+</nav>
+<div class="container-fluid">
+    <div id="Record">
     </div>
-    <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
-        <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
-    </nav>
+</div>
+<nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
+    <p style="position:absolute;right:20px;width:120px;">Made By FI</p>
+</nav>
 </body>
 
 </html>

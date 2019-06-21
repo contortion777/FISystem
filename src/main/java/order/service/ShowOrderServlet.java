@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "ShowOrderServlet", urlPatterns = { "/ShowOrderServlet" })
+@WebServlet(name = "ShowOrderServlet", urlPatterns = "/ShowOrderServlet")
 @MultipartConfig
 public class ShowOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -18,8 +18,6 @@ public class ShowOrderServlet extends HttpServlet {
 
         String MyStatus = request.getParameter("Status");
         String who = request.getParameter("Account");
-        System.out.println("MyStatus : " + MyStatus);
-        System.out.println("who : " + who);
         ////////////////////////////////////////// 上面這裡要填老闆端給的參數 決定要拿的菜單狀態 或是 拿到客人ID
         //String MyStatus ="已完成";
         MyOrder connection = new MyOrder();

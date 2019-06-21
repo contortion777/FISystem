@@ -1,11 +1,10 @@
 <%@ page import="com.mongodb.MongoClient" %>
-<%@ page import="com.mongodb.DB" %>
-<%@ page import="com.mongodb.*" %>
+<%@ page import="com.mongodb.MongoClientURI" %>
+<%@ page import="com.mongodb.client.FindIterable" %>
 <%@ page import="com.mongodb.client.MongoCollection" %>
+<%@ page import="com.mongodb.client.MongoCursor" %>
 <%@ page import="com.mongodb.client.MongoDatabase" %>
 <%@ page import="org.bson.Document" %>
-<%@ page import="com.mongodb.client.FindIterable" %>
-<%@ page import="com.mongodb.client.MongoCursor" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
@@ -19,38 +18,26 @@
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
 
-
         FindIterable<Document> findIterable = collection.find();
         MongoCursor<Document> cursorlogin = findIterable.iterator();
         Document login = cursorlogin.next();
 
         String username = request.getParameter("username");
-
         String password = request.getParameter("password");
-
         String dbusername = (String) login.get("username");//get("Account")的value
-
         String dbpassword = (String) login.get("password");//get("Password")的value
-
-
-
 
         if (dbusername.equals(username) && dbpassword.equals(password)) {
             request.getRequestDispatcher("/indexTemp.jsp").forward(request, response);
             HttpSession session1=request.getSession();
             session1.setAttribute("name",username);
-        }else if (username==null&&password==null){
+        } else if (username==null&&password==null) {
             HttpSession session1=request.getSession();
             session1.setAttribute("error_message", "請先登入");
-
-        }else{
+        } else {
             HttpSession session1=request.getSession();
             session1.setAttribute("error_message", "帳號或密碼錯誤，請重新輸入");
-
         }
-
-
-
     %>
     <title>馬尚飽—登入</title>
     <!-- Required meta tags -->
@@ -124,7 +111,6 @@
     <ul class="navbar-nav mr-auto">
         <img src="picture/title.jpg" alt="馬尚飽" style="width:68px;float:left;">
         <p id="title">Full Immediately</p>
-
     </ul>
     <form style="text-align:right">
         <a href="FI_Login.jsp" style="color:#666666"><span class="glyphicon glyphicon-globe"></span><strong> 我是客人</strong></a>
@@ -152,9 +138,7 @@
                 </form>
             </div>
         </div>
-
     </div>
-
     <h4 id="errMsg" class="text-danger" align="center"><%= session.getAttribute("error_message") %></h4>
 </div>
 <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">

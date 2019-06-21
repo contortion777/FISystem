@@ -37,7 +37,11 @@
                 "Email": mail,
                 "username": name
             };
+			if(name==""||mail==""||account==""||password==""){
+				alert("請輸入完整資料");
+			}
             console.log(data123);
+			else{
             var url = "https://fisystem.herokuapp.com/SignupServlet";
             var jsonData = JSON.stringify(data123);
             $.ajax({
@@ -53,7 +57,7 @@
                     alert("失敗");
                 }
             });
-
+			}
         }
     </script>
     <style>
@@ -118,19 +122,23 @@
                     <form style="width:100%;valign:center">
                         <div class="form-group" style="text-align:center">
                             <label>姓名</label>
-                            <input id="name" class="form-control" placeholder="姓名">
+                            <input id="name" class="form-control" placeholder="姓名" required="required">
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>信箱(Gmail)</label>
-                            <input id="mail" class="form-control" placeholder="Gmail">
+                            <input id="mail" class="form-control" placeholder="Gmail" required="required">
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>帳號</label>
-                            <input id="account" class="form-control" placeholder="帳號">
+                            <input id="account" class="form-control" placeholder="帳號" required="required">
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>密碼</label>
+<<<<<<< HEAD
                             <input type = "password" id="password" class="form-control" placeholder="密碼">
+=======
+                            <input id="password" class="form-control" placeholder="密碼" required="required">
+>>>>>>> origin/master
                         </div>
                     </form>
                     <div style="text-align:center">

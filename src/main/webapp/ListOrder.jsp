@@ -15,7 +15,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap&subset=chinese-traditional" rel="stylesheet">
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -51,19 +51,19 @@
             font-family: "微軟正黑體";
             margin-top: 100px;
         }
-		#title{
-			width:500px;
-			background-color:#81A3A7;
-			font-size:48px;
-			color:white;
-			font-family:Comic Sans MS;
-		}
-		@media (max-width:480px){
-			#title{
-				font-size:36px;
-				width:100%;
-			}
-		}
+        #title{
+            width:500px;
+            background-color:#81A3A7;
+            font-size:48px;
+            color:white;
+            font-family:Comic Sans MS;
+        }
+        @media (max-width:480px){
+            #title{
+                font-size:36px;
+                width:100%;
+            }
+        }
     </style>
 
     <script>
@@ -84,14 +84,14 @@
 <nav class="navbar navbar-expand-sm navbar-fixed-top">
     <ul class="navbar-nav mr-auto">
         <img src="picture/title.jpg" style="width:68px;float:left;">
-            <p id="title">Full Immediately</p>
-        
+        <p id="title">Full Immediately</p>
+
     </ul>
     <form style="text-align:right">
         <a href="HostMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery"></span><strong> 編輯菜單 </strong></a>
         <a href="ListOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart"></span><strong> 歷史訂單 </strong></a>
         <a href="ManageOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-list"></span><strong> 管理訂單 </strong></a>
-        <a action = "https://fisystem.herokuapp.com/Logout?Who=Host" method="post" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
+        <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
     </form>
 </nav>
 <div class="container">
