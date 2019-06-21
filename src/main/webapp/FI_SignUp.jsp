@@ -42,20 +42,43 @@
 			
             var url = "https://fisystem.herokuapp.com/SignupServlet";
             var jsonData = JSON.stringify(data123);
-            $.ajax({
-                type: "POST",
-                url: url,
-                dataType: "json",
-                data: jsonData,
-                success: function() {
-                    alert("註冊成功");
-                    window.location.href = "FI_Login.jsp";
-                },
-                error: function() {
-                    alert("失敗");
-                }
-            });
-			
+            if(checkRegister()) {	//檢查註冊*/
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "json",
+                    data: jsonData,
+                    success: function () {
+                        alert("註冊成功");
+                        window.location.href = "FI_Login.jsp";
+                    },
+                    error: function () {
+                        alert("失敗");
+                    }
+                });
+            }
+        }
+
+
+        function checkRegister(){
+            if(account == ""){
+                alert("請輸入帳號");
+                return false;
+            }
+            else if(name == ""){
+                alert("請輸入姓名");
+                return false;
+            }
+            else if(password == ""){
+                alert("請輸入密碼");
+                return false;
+            }
+            else if(mail == ""){
+                alert("請輸入信箱");
+                return false;
+            }
+
+            return true;
         }
     </script>
     <style>
