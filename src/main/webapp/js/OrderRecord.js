@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    let order = { "Account" : var1, "Status": "已完成" };
+    let order = { "Account": var1, "Status": "已完成" };
     //let jsonData = JSON.stringify(order);
     console.log("var1" + var1);
     $.ajax({
@@ -51,5 +51,16 @@ $(document).ready(function() {
                 );
             }
         }
+    });
+});
+$(document).ready(function() {
+    $('#logout').click(function(e) {
+        $.ajax({
+            type: "GET",
+            url: "https://fisystem.herokuapp.com/Logout?Who=Guest",
+            succes: function(data) {
+                alert("登出成功");
+            }
+        });
     });
 });

@@ -102,7 +102,7 @@
         <a href="HostMenu.jsp" style="color:#666666"><span class="glyphicon glyphicon-cutlery" /><strong>編輯菜單 </strong></a>
         <a href="ListOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-shopping-cart" /><strong>歷史訂單 </strong></a>
         <a href="ManageOrder.jsp" style="color:#666666"><span class="glyphicon glyphicon-list" /><strong>管理訂單 </strong></a>
-        <a href="HostLogin.jsp" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
+        <a href="" id="logout" style="color:#666666"><span class="glyphicon glyphicon-off"></span><strong> 登出</strong></a>
     </form>
 </nav>
 <div class="container-fluid">
@@ -146,7 +146,7 @@
                     <br>
                     <input type="text" id="className" />
                     <input type="file" id="myFile" />
-                    <input type="button" value="提交" onclick="makeImgurUrl('class')" />
+                    <input type="button" value="點擊上傳圖片" onclick="makeImgurUrl('class')" />
                     <br>
                     <label id="cnoti" class="col-form-label"> </label>
                     <br>

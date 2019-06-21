@@ -37,6 +37,7 @@
                 "Email": mail,
                 "username": name
             };
+
 			if(name==""||mail==""||password==""||account==""){
 				alert("請填寫完整");
 			//console.log("請填寫完整");
@@ -65,6 +66,31 @@
 					}
 				});
 			}
+
+			
+            console.log(data123);
+			
+            var url = "https://fisystem.herokuapp.com/SignupServlet";
+            var jsonData = JSON.stringify(data123);
+            if(checkRegister()) {	//檢查註冊*/
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    dataType: "json",
+                    data: jsonData,
+                    success: function () {
+                        alert("註冊成功");
+                        window.location.href = "FI_Login.jsp";
+                    },
+                    error: function () {
+                        alert("失敗");
+                    }
+                });
+            }
+        }
+
+
+        
         }
     </script>
     <style>
