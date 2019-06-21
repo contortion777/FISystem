@@ -37,7 +37,11 @@
                 "Email": mail,
                 "username": name
             };
+			if(name==""||mail==""||account==""||password==""){
+				alert("請輸入完整資料");
+			}
             console.log(data123);
+			else{
             var url = "https://fisystem.herokuapp.com/SignupServlet";
             var jsonData = JSON.stringify(data123);
             $.ajax({
@@ -53,7 +57,7 @@
                     alert("失敗");
                 }
             });
-
+			}
         }
     </script>
     <style>
