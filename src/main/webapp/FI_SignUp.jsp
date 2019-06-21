@@ -122,19 +122,19 @@
                     <form style="width:100%;valign:center">
                         <div class="form-group" style="text-align:center">
                             <label>姓名</label>
-                            <input id="name" class="form-control" placeholder="姓名" required="required">
+                            <input id="name" class="form-control" placeholder="姓名" required>
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>信箱(Gmail)</label>
-                            <input id="mail" class="form-control" placeholder="Gmail" required="required">
+                            <input id="mail" class="form-control" placeholder="Gmail" required>
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>帳號</label>
-                            <input id="account" class="form-control" placeholder="帳號" required="required">
+                            <input id="account" class="form-control" placeholder="帳號" required>
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>密碼</label>
-                            <input id="password" class="form-control" placeholder="密碼" required="required">
+                            <input id="password" class="form-control" placeholder="密碼" required>
                         </div>
                     </form>
                     <div style="text-align:center">
