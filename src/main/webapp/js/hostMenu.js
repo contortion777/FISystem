@@ -70,7 +70,8 @@ $(document).ready(function() {
 				$(div).append(
 					'<div class="well well-sm" style="float:left;width:33%">' +
 					'<strong style="font-size:16px"><span style="float:left">' + name + '</span><span style="float:right">' + '$' + price +
-					'<button type="button" style="margin-left:8px;background-color:#81A3A7;color:white;" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal5" onclick="updateMenu(\'' + name + '\',\''+ classname + '\')">修改</button></span></strong>' +
+					'<button type="button" style="margin-left:8px;background-color:#81A3A7;color:white;" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal5" onclick="updateMenu(\'' + name + '\',\''+ classname + '\')">修改</button>' +
+					'<button type="button" style="margin-left:8px" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal4" onclick="deleteMenu(\'' + name + '\')">刪除</button></span></strong>' +
 					'</div>'
 				);
 			}
@@ -101,9 +102,7 @@ $(document).ready(function() {
 					'<div class="caption">' +
 					'<h5><strong>' + name + '</strong><strong style="float:right">$' + price + '</strong></h5>' +
 					'<p>' + des + '</p>' +
-					'<button type="button" style="background-color:#81A3A7;color:white;" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal2">' +
-					'修改' +
-					'</button>' +
+					'<button type="button" style="margin-left:8px" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal7" onclick="deleteSetMenu(\'' + name + '\')">刪除</button>' +
 					'</div>' +
 					'</div>' +
 					'</div>'
@@ -186,8 +185,32 @@ $(document).ready(function() {
 			});}
 	});
 
+	//刪除餐點
+	$('#deletemenubtn').click(function() {
+		let dname = $('#deleteMenu').val();
+		let fd = new FormData();
+		fd.append("Name", dname);
+		console.log(dname);
+		$.ajax({
+			url: "https://fisystem.herokuapp.com/RemoveMenu",
+			//url: "http://localhost:8080/FullImmediately/RemoveMenu",
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: fd, //data只能指定單一物件
+			type: "Post",
+			success: function() {
+				alert("刪除成功！");
+				window.location.reload()
+			},
+			error: function() {
+				alert("失敗");
+			}
+		});
+	});
+
 	//刪除餐點種類
-	$('#DeleteMenu').click(function(e) {
+	$('#DeleteClass').click(function(e) {
 		let dclassname = $('#deleteMenuClass').val();
 		let fd = new FormData();
 		fd.append("ClassName", dclassname);
@@ -273,6 +296,29 @@ $(document).ready(function() {
 		}
 	});
 
+	//刪除套餐
+	$('#deletesetbtn').click(function(e) {
+		let dsetname = $('#deleteSet').val();
+		let fd = new FormData();
+		fd.append("Name", dsetname);
+		console.log(dsetname);
+		$.ajax({
+			url: "https://fisystem.herokuapp.com/RemoveSet",
+			//url: "http://localhost:8080/FullImmediately/RemoveSet",
+			cache: false,
+			contentType: false,
+			processData: false,
+			data: fd, //data只能指定單一物件
+			type: "Post",
+			success: function() {
+				alert("刪除成功！");
+				window.location.reload()
+			},
+			error: function() {
+				alert("失敗");
+			}
+		});
+	});
 });
 
 function addMenu(className) {
@@ -285,8 +331,16 @@ function updateMenu(nnn,ccc) {
 	$("#oldMenu").val(nnn);
 }
 
+function deleteMenu(nnn) {
+	$("#deleteMenu").val(nnn);
+}
+
 function deleteMenuClass(ddd) {
 	$("#deleteMenuClass").val(ddd);
+}
+
+function deleteSetMenu(nnn) {
+	$("#deleteSet").val(nnn);
 }
 
 function makeImgurUrl(para) {
