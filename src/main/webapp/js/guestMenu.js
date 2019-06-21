@@ -313,3 +313,15 @@ function sendNotify(msg) {
         }
     }
 }
+
+$(document).ready(function() {
+    $('#logout').click(function(e) {
+        $.ajax({
+            type: "GET",
+            url: "https://fisystem.herokuapp.com/Logout?Who=Guest",
+            succes: function(data) {
+                alert("登出成功");
+            }
+        });
+    });
+});

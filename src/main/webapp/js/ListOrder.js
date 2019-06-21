@@ -44,7 +44,18 @@ $(document).ready(function() {
                 $('#card' + oid).append(
                     '<h4>總金額:' + "  " + tprice + '元</h4>'
                 );
-			}
+            }
         }
+    });
+});
+$(document).ready(function() {
+    $('#logout').click(function(e) {
+        $.ajax({
+            type: "GET",
+            url: "https://fisystem.herokuapp.com/Logout?Who=Host",
+            succes: function(data) {
+                alert("登出成功");
+            }
+        });
     });
 });
