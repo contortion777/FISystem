@@ -146,7 +146,7 @@
                     <br>
                     <input type="text" id="className" />
                     <input type="file" id="myFile" />
-                    <input type="button" value="提交" onclick="makeImgurUrl('class')" />
+                    <input type="button" value="點擊上傳圖片" onclick="makeImgurUrl('class')" />
                     <br>
                     <label id="cnoti" class="col-form-label"> </label>
                     <br>
