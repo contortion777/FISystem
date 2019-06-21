@@ -142,7 +142,7 @@
                     <div style="font-size:100px;text-align:center;" class="form-group">
                         <img src="picture/title.jpg" style="width:100px;">
                     </div>
-                    <div style="text-align:center;" class="form-group">
+                    <div style="width:330px;text-align:center;" class="form-group">
                         <label>帳號</label>
                         <input class="form-control" placeholder="輸入帳號" name="username">
                     </div>

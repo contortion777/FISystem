@@ -91,7 +91,7 @@
     </form>
 </nav>
 <div class="container-fluid">
-    <div class="col-md-4" id="Record">
+    <div id="Record">
     </div>
 </div>
 <nav style="background-color:#585A56;color:white;" class="navbar navbar-default navbar-fixed-bottom">
