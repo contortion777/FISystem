@@ -61,19 +61,19 @@
 
 
         function checkRegister(){
-            if(account == ""){
+            if($("#account").val() == ""){
                 alert("請輸入帳號");
                 return false;
             }
-            else if(name == ""){
+            else if($("#name").val() == ""){
                 alert("請輸入姓名");
                 return false;
             }
-            else if(password == ""){
+            else if($("#password").val() == ""){
                 alert("請輸入密碼");
                 return false;
             }
-            else if(mail == ""){
+            else if($("#mail").val() == ""){
                 alert("請輸入信箱");
                 return false;
             }
