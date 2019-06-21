@@ -130,7 +130,7 @@
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>密碼</label>
-                            <input id="password" class="form-control" placeholder="密碼">
+                            <input type = "password" id="password" class="form-control" placeholder="密碼">
                         </div>
                     </form>
                     <div style="text-align:center">
