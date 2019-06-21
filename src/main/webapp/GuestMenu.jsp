@@ -182,8 +182,6 @@
                 </table>
             </div>
             <button id="sendOrder" style="background-color:#888888;float:right;color:white" class="btn btn-default" type="submit">送出</button>
-            <button onclick="createNotify()">Create Notify!</button>
-            <button onclick="notifyMe()">Notify me!</button>
         </div>
     </div>
 </div>
