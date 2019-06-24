@@ -144,7 +144,7 @@ $(document).ready(function() {
             $.ajax({
                 url: "https://fisystem.herokuapp.com/AddOrderServlet",
                 data: jsonData, //data只能指定單一物件
-                dataType: "text",
+                dataType: "json",
                 type: "Post",
                 success: function() {
                     alert("新增成功！");
@@ -313,3 +313,15 @@ function sendNotify(msg) {
         }
     }
 }
+
+$(document).ready(function() {
+    $('#logout').click(function(e) {
+        $.ajax({
+            type: "GET",
+            url: "https://fisystem.herokuapp.com/Logout?Who=Guest",
+            succes: function(data) {
+                alert("登出成功");
+            }
+        });
+    });
+});

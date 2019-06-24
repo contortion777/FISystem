@@ -37,24 +37,38 @@
                 "Email": mail,
                 "username": name
             };
-            console.log(data123);
-            var url = "https://fisystem.herokuapp.com/SignupServlet";
-            var jsonData = JSON.stringify(data123);
-            $.ajax({
-                type: "POST",
-                url: url,
-                dataType: "json",
-                data: jsonData,
-                success: function() {
-                    alert("註冊成功");
-                    window.location.href = "FI_Login.jsp";
-                },
-                error: function() {
-                    alert("失敗");
-                }
-            });
 
+			if(name==""||mail==""||password==""||account==""){
+				alert("請填寫完整");
+			//console.log("請填寫完整");
+			}
+			var emailReg=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+			if (!mail.match(emailReg)){
+				alert("Email格式錯誤");
+			}
+
+			else{
+				console.log(data123);
+				
+				var url = "https://fisystem.herokuapp.com/SignupServlet";
+				var jsonData = JSON.stringify(data123);
+				$.ajax({
+					type: "POST",
+					url: url,
+					dataType: "json",
+					data: jsonData,
+					success: function() {
+						alert("註冊成功");
+						window.location.href = "FI_Login.jsp";
+					},
+					error: function() {
+						alert("失敗");
+					}
+				});
+			}
+   
         }
+
     </script>
     <style>
         .affix {
@@ -130,7 +144,9 @@
                         </div>
                         <div class="form-group" style="text-align:center">
                             <label>密碼</label>
-                            <input id="password" class="form-control" placeholder="密碼">
+
+                             <input type = "password" id="password" class="form-control" placeholder="密碼">
+
                         </div>
                     </form>
                     <div style="text-align:center">
